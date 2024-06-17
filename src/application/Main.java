@@ -13,15 +13,19 @@ public class Main {
 
         SellerDao sellerDao = DaoFactory.createSellerDao();
 
-        System.out.println("--- TEST: seller findById: ---");
+        System.out.println("--- TEST: FindByID: ---");
         Seller seller = sellerDao.findById(3);
         System.out.println(seller);
 
-        System.out.println("\n--- TEST: seller findByDepartment: ---");
+        System.out.println("\n--- TEST: FindByDepartment: ---");
         Department department = new Department(2, null);
         List<Seller> list = sellerDao.findByDepartment(department);
-
         list.forEach(System.out::println);
+
+        System.out.println("\n--- TEST: FindAll: ---");
+        list = sellerDao.findAll();
+        list.forEach(System.out::println);
+
 
     }
 }
