@@ -35,10 +35,14 @@ public class Main {
          */
 
         System.out.println("\n--- TEST: Update: ---");
-        seller = sellerDao.findById(1);
-        seller.setEmail("gustavo@gmail.com");
+        seller = sellerDao.findById(13);
+        seller.setName("Filipe Mota");
         sellerDao.update(seller);
         System.out.println("Updated Complete!");
+
+        System.out.println("\n--- TEST: Delete: ---");
+        sellerDao.deleteById(2);
+
     }
 }
 
